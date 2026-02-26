@@ -1,0 +1,380 @@
+html {
+    --layout_-_display: flex;
+    --layout-inline_-_display: inline-flex;
+    --layout-horizontal_-_display: var(--layout_-_display);
+    --layout-horizontal_-_-ms-flex-direction: row;
+    --layout-horizontal_-_-webkit-flex-direction: row;
+    --layout-horizontal_-_flex-direction: row;
+    --layout-horizontal-reverse_-_display: var(--layout_-_display);
+    --layout-horizontal-reverse_-_-ms-flex-direction: row-reverse;
+    --layout-horizontal-reverse_-_-webkit-flex-direction: row-reverse;
+    --layout-horizontal-reverse_-_flex-direction: row-reverse;
+    --layout-vertical_-_display: var(--layout_-_display);
+    --layout-vertical_-_-ms-flex-direction: column;
+    --layout-vertical_-_-webkit-flex-direction: column;
+    --layout-vertical_-_flex-direction: column;
+    --layout-vertical-reverse_-_display: var(--layout_-_display);
+    --layout-vertical-reverse_-_-ms-flex-direction: column-reverse;
+    --layout-vertical-reverse_-_-webkit-flex-direction: column-reverse;
+    --layout-vertical-reverse_-_flex-direction: column-reverse;
+    --layout-wrap_-_-ms-flex-wrap: wrap;
+    --layout-wrap_-_-webkit-flex-wrap: wrap;
+    --layout-wrap_-_flex-wrap: wrap;
+    --layout-wrap-reverse_-_-ms-flex-wrap: wrap-reverse;
+    --layout-wrap-reverse_-_-webkit-flex-wrap: wrap-reverse;
+    --layout-wrap-reverse_-_flex-wrap: wrap-reverse;
+    --layout-flex-auto_-_-ms-flex: 1 1 auto;
+    --layout-flex-auto_-_-webkit-flex: 1 1 auto;
+    --layout-flex-auto_-_flex: 1 1 auto;
+    --layout-flex-none_-_-ms-flex: none;
+    --layout-flex-none_-_-webkit-flex: none;
+    --layout-flex-none_-_flex: none;
+    --layout-flex_-_-ms-flex: 1 1 0.000000001px;
+    --layout-flex_-_-webkit-flex: 1;
+    --layout-flex_-_flex: 1;
+    --layout-flex_-_-webkit-flex-basis: 0.000000001px;
+    --layout-flex_-_flex-basis: 0.000000001px;
+    --layout-flex-2_-_-ms-flex: 2;
+    --layout-flex-2_-_-webkit-flex: 2;
+    --layout-flex-2_-_flex: 2;
+    --layout-flex-3_-_-ms-flex: 3;
+    --layout-flex-3_-_-webkit-flex: 3;
+    --layout-flex-3_-_flex: 3;
+    --layout-flex-4_-_-ms-flex: 4;
+    --layout-flex-4_-_-webkit-flex: 4;
+    --layout-flex-4_-_flex: 4;
+    --layout-flex-5_-_-ms-flex: 5;
+    --layout-flex-5_-_-webkit-flex: 5;
+    --layout-flex-5_-_flex: 5;
+    --layout-flex-6_-_-ms-flex: 6;
+    --layout-flex-6_-_-webkit-flex: 6;
+    --layout-flex-6_-_flex: 6;
+    --layout-flex-7_-_-ms-flex: 7;
+    --layout-flex-7_-_-webkit-flex: 7;
+    --layout-flex-7_-_flex: 7;
+    --layout-flex-8_-_-ms-flex: 8;
+    --layout-flex-8_-_-webkit-flex: 8;
+    --layout-flex-8_-_flex: 8;
+    --layout-flex-9_-_-ms-flex: 9;
+    --layout-flex-9_-_-webkit-flex: 9;
+    --layout-flex-9_-_flex: 9;
+    --layout-flex-10_-_-ms-flex: 10;
+    --layout-flex-10_-_-webkit-flex: 10;
+    --layout-flex-10_-_flex: 10;
+    --layout-flex-11_-_-ms-flex: 11;
+    --layout-flex-11_-_-webkit-flex: 11;
+    --layout-flex-11_-_flex: 11;
+    --layout-flex-12_-_-ms-flex: 12;
+    --layout-flex-12_-_-webkit-flex: 12;
+    --layout-flex-12_-_flex: 12;
+    --layout-start_-_-ms-flex-align: start;
+    --layout-start_-_-webkit-align-items: flex-start;
+    --layout-start_-_align-items: flex-start;
+    --layout-center_-_-ms-flex-align: center;
+    --layout-center_-_-webkit-align-items: center;
+    --layout-center_-_align-items: center;
+    --layout-end_-_-ms-flex-align: end;
+    --layout-end_-_-webkit-align-items: flex-end;
+    --layout-end_-_align-items: flex-end;
+    --layout-baseline_-_-ms-flex-align: baseline;
+    --layout-baseline_-_-webkit-align-items: baseline;
+    --layout-baseline_-_align-items: baseline;
+    --layout-start-justified_-_-ms-flex-pack: start;
+    --layout-start-justified_-_-webkit-justify-content: flex-start;
+    --layout-start-justified_-_justify-content: flex-start;
+    --layout-center-justified_-_-ms-flex-pack: center;
+    --layout-center-justified_-_-webkit-justify-content: center;
+    --layout-center-justified_-_justify-content: center;
+    --layout-end-justified_-_-ms-flex-pack: end;
+    --layout-end-justified_-_-webkit-justify-content: flex-end;
+    --layout-end-justified_-_justify-content: flex-end;
+    --layout-around-justified_-_-ms-flex-pack: distribute;
+    --layout-around-justified_-_-webkit-justify-content: space-around;
+    --layout-around-justified_-_justify-content: space-around;
+    --layout-justified_-_-ms-flex-pack: justify;
+    --layout-justified_-_-webkit-justify-content: space-between;
+    --layout-justified_-_justify-content: space-between;
+    --layout-center-center_-_-ms-flex-align: var(--layout-center_-_-ms-flex-align);
+    --layout-center-center_-_-webkit-align-items: var(--layout-center_-_-webkit-align-items);
+    --layout-center-center_-_align-items: var(--layout-center_-_align-items);
+    --layout-center-center_-_-ms-flex-pack: var(--layout-center-justified_-_-ms-flex-pack);
+    --layout-center-center_-_-webkit-justify-content: var(--layout-center-justified_-_-webkit-justify-content);
+    --layout-center-center_-_justify-content: var(--layout-center-justified_-_justify-content);
+    --layout-self-start_-_-ms-align-self: flex-start;
+    --layout-self-start_-_-webkit-align-self: flex-start;
+    --layout-self-start_-_align-self: flex-start;
+    --layout-self-center_-_-ms-align-self: center;
+    --layout-self-center_-_-webkit-align-self: center;
+    --layout-self-center_-_align-self: center;
+    --layout-self-end_-_-ms-align-self: flex-end;
+    --layout-self-end_-_-webkit-align-self: flex-end;
+    --layout-self-end_-_align-self: flex-end;
+    --layout-self-stretch_-_-ms-align-self: stretch;
+    --layout-self-stretch_-_-webkit-align-self: stretch;
+    --layout-self-stretch_-_align-self: stretch;
+    --layout-self-baseline_-_-ms-align-self: baseline;
+    --layout-self-baseline_-_-webkit-align-self: baseline;
+    --layout-self-baseline_-_align-self: baseline;
+    --layout-start-aligned_-_-ms-flex-line-pack: start;
+    --layout-start-aligned_-_-ms-align-content: flex-start;
+    --layout-start-aligned_-_-webkit-align-content: flex-start;
+    --layout-start-aligned_-_align-content: flex-start;
+    --layout-end-aligned_-_-ms-flex-line-pack: end;
+    --layout-end-aligned_-_-ms-align-content: flex-end;
+    --layout-end-aligned_-_-webkit-align-content: flex-end;
+    --layout-end-aligned_-_align-content: flex-end;
+    --layout-center-aligned_-_-ms-flex-line-pack: center;
+    --layout-center-aligned_-_-ms-align-content: center;
+    --layout-center-aligned_-_-webkit-align-content: center;
+    --layout-center-aligned_-_align-content: center;
+    --layout-between-aligned_-_-ms-flex-line-pack: justify;
+    --layout-between-aligned_-_-ms-align-content: space-between;
+    --layout-between-aligned_-_-webkit-align-content: space-between;
+    --layout-between-aligned_-_align-content: space-between;
+    --layout-around-aligned_-_-ms-flex-line-pack: distribute;
+    --layout-around-aligned_-_-ms-align-content: space-around;
+    --layout-around-aligned_-_-webkit-align-content: space-around;
+    --layout-around-aligned_-_align-content: space-around;
+    --layout-block_-_display: block;
+    --layout-invisible_-_visibility: hidden !important;
+    --layout-relative_-_position: relative;
+    --layout-fit_-_position: absolute;
+    --layout-fit_-_top: 0;
+    --layout-fit_-_right: 0;
+    --layout-fit_-_bottom: 0;
+    --layout-fit_-_left: 0;
+    --layout-scroll_-_-webkit-overflow-scrolling: touch;
+    --layout-scroll_-_overflow: auto;
+    --layout-fullbleed_-_margin: 0;
+    --layout-fullbleed_-_height: 100vh;
+    --layout-fixed-top_-_position: fixed;
+    --layout-fixed-top_-_top: 0;
+    --layout-fixed-top_-_left: 0;
+    --layout-fixed-top_-_right: 0;
+    --layout-fixed-right_-_position: fixed;
+    --layout-fixed-right_-_top: 0;
+    --layout-fixed-right_-_right: 0;
+    --layout-fixed-right_-_bottom: 0;
+    --layout-fixed-bottom_-_position: fixed;
+    --layout-fixed-bottom_-_right: 0;
+    --layout-fixed-bottom_-_bottom: 0;
+    --layout-fixed-bottom_-_left: 0;
+    --layout-fixed-left_-_position: fixed;
+    --layout-fixed-left_-_top: 0;
+    --layout-fixed-left_-_bottom: 0;
+    --layout-fixed-left_-_left: 0;
+}
+body {
+    color: #1b2b37;
+    background-color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    height: auto;
+    min-height: 90%;
+}
+.centered {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical-section-container {
+    display: var(--layout-vertical_-_display);
+    -ms-flex-direction: var(--layout-vertical_-_-ms-flex-direction);
+    -webkit-flex-direction: var(--layout-vertical_-_-webkit-flex-direction);
+    flex-direction: var(--layout-vertical_-_flex-direction);
+}
+.demo {
+    display: block;
+    margin-top: 20px;
+    background-color: white;
+    
+    padding: 10px;
+    display: var(--demo-snippet-demo_-_display, block);
+    -ms-flex-direction: var(--demo-snippet-demo_-_-ms-flex-direction);
+    -webkit-flex-direction: var(--demo-snippet-demo_-_-webkit-flex-direction);
+    flex-direction: var(--demo-snippet-demo_-_flex-direction);
+    -ms-flex-wrap: var(--demo-snippet-demo_-_-ms-flex-wrap);
+    -webkit-flex-wrap: var(--demo-snippet-demo_-_-webkit-flex-wrap);
+    flex-wrap: var(--demo-snippet-demo_-_flex-wrap);
+    -ms-flex-pack: var(--demo-snippet-demo_-_-ms-flex-pack);
+    -webkit-justify-content: var(--demo-snippet-demo_-_-webkit-justify-content);
+    justify-content: var(--demo-snippet-demo_-_justify-content);
+}
+.portal-o-boxed {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+.portal-c-header {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.portal-c-nav {
+    height: 100%;
+}
+.portal-c-logo {
+    max-height: 65px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.portal-c-menu {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 50px;
+    justify-content: left;
+    height: 100%;
+    padding: 0 20px;
+}
+.content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: grid;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.portal-c-menu__link.is-active {
+    color: #1b2b37;
+    border-color: currentColor;
+}
+.portal-c-menu__link {
+    display: flex;
+    align-items: center;
+    color: #767676;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+    height: 100%;
+}
+.portal-c-footer {
+    padding: 20px;
+    width: 100%;
+    height:60px;
+    box-sizing: border-box;    
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgb(218, 223, 228);
+    font-size: 10px;
+    position: fixed;
+    bottom: 0px;
+}
+.pkr-c-table {
+    width: 100%;
+    border-spacing: 0;
+    margin: 30px 0;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 2px;
+    border-color: grey;
+    font-variant: normal;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.pkr-c-table-th {
+    background-color: #fafafa;
+    border: solid 1px #ccc;
+    line-height: 17px;
+    font-size: 14px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    padding: 14px 16px;
+    font-weight: 400;
+}
+th {
+    text-align: inherit;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+td {
+    padding: 14px 16px;
+    position: relative;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    border-top-color: rgb(204, 204, 204);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top: 0;
+}
+.portal-c-title--keys {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzBweCIgaGVpZ2h0PSIzMHB4IiB2aWV3Qm94PSIwIDAgMzAgMzAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Imljb25zL2tleSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0yIj4KICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMyIgZmlsbD0iIzIyMjIyMiIgeD0iMCIgeT0iMCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iMiI+PC9yZWN0PgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTEwLjgyLDE2LjY4IEMxMS4yNzMzMzU2LDE2LjY4IDExLjY2NjY2NSwxNi41MTMzMzUgMTIsMTYuMTggQzEyLjMzMzMzNSwxNS44NDY2NjUgMTIuNSwxNS40NTMzMzU2IDEyLjUsMTUgQzEyLjUsMTQuNTQ2NjY0NCAxMi4zMzMzMzUsMTQuMTUzMzM1IDEyLDEzLjgyIEMxMS42NjY2NjUsMTMuNDg2NjY1IDExLjI3MzMzNTYsMTMuMzIgMTAuODIsMTMuMzIgQzEwLjM2NjY2NDQsMTMuMzIgOS45ODAwMDE2LDEzLjQ4NjY2NSA5LjY2LDEzLjgyIEM5LjMzOTk5ODQsMTQuMTUzMzM1IDkuMTgsMTQuNTQ2NjY0NCA5LjE4LDE1IEM5LjE4LDE1LjQ1MzMzNTYgOS4zMzk5OTg0LDE1Ljg0NjY2NSA5LjY2LDE2LjE4IEM5Ljk4MDAwMTYsMTYuNTEzMzM1IDEwLjM2NjY2NDQsMTYuNjggMTAuODIsMTYuNjggWiBNMTUuNTQsMTMuMzIgTDI0LjE4LDEzLjMyIEwyNC4xOCwxNi42OCBMMjIuNSwxNi42OCBMMjIuNSwyMCBMMTkuMTgsMjAgTDE5LjE4LDE2LjY4IEwxNS41NCwxNi42OCBDMTUuMjA2NjY1LDE3LjY2NjY3MTYgMTQuNjA2NjcxLDE4LjQ2NjY2MzYgMTMuNzQsMTkuMDggQzEyLjg3MzMyOSwxOS42OTMzMzY0IDExLjkwMDAwNTQsMjAgMTAuODIsMjAgQzkuOTEzMzI4OCwyMCA5LjA3NjY3MDUsMTkuNzc2NjY4OSA4LjMxLDE5LjMzIEM3LjU0MzMyOTUsMTguODgzMzMxMSA2LjkzNjY2ODksMTguMjc2NjcwNSA2LjQ5LDE3LjUxIEM2LjA0MzMzMTEsMTYuNzQzMzI5NSA1LjgyLDE1LjkwNjY3MTIgNS44MiwxNSBDNS44MiwxNC4wOTMzMjg4IDYuMDQzMzMxMSwxMy4yNTY2NzA1IDYuNDksMTIuNDkgQzYuOTM2NjY4OSwxMS43MjMzMjk1IDcuNTQzMzI5NSwxMS4xMTY2Njg5IDguMzEsMTAuNjcgQzkuMDc2NjcwNSwxMC4yMjMzMzExIDkuOTEzMzI4OCwxMCAxMC44MiwxMCBDMTEuOTAwMDA1NCwxMCAxMi44NzMzMjksMTAuMzA2NjYzNiAxMy43NCwxMC45MiBDMTQuNjA2NjcxLDExLjUzMzMzNjQgMTUuMjA2NjY1LDEyLjMzMzMyODQgMTUuNTQsMTMuMzIgWiIgaWQ9Iu6uiyIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=) no-repeat transparent 0 9px;
+    padding-left: 36px;
+    padding-top: 0px;
+    height: 42px;
+}
+.pkr-o-medium-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #444;
+    line-height: 22px;
+    margin: 0;
+    word-break: break-word;
+}
+.pkr-o-small-text {
+    font-size: 13px;
+    color: #444;
+    line-height: 26px;
+    margin: 0;
+    word-break: break-word;
+}
+.pkr-c-table-td-content {
+    padding: 14px 16px;
+    position: relative;
+}
+.pkr-c-table-td {
+    background-color: #fff;
+    border: solid 1px #ccc;
+    border-top-color: rgb(204, 204, 204);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top: 0;
+}

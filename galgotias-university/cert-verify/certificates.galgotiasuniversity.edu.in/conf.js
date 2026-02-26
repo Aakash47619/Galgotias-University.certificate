@@ -1,0 +1,1 @@
+config='{"connectionType":"client","certificateType":"certonceeducationprod","signingKeys":[{"organizationName":"Galgotias","blockchain":"ethereum","publicKey":"0xa65fc6705eea9e6a1b9ebc9d7a92bcf3d0749a65","date":"05/23/2023"}]}'

@@ -1,0 +1,255 @@
+<html>
+  <head>
+    <script>        
+      window.localStorage.clear();
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <meta property="og:title" content="Saileshnath Tripathi  - " />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="" />
+    <meta property='og:image' content='<br />
+<b>Warning</b>:  Undefined variable $share_image in <b>/var/www/certificates.galgotiasuniversity.edu.in/verifier.php</b> on line <b>63</b><br />
+'/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="Saileshnath Tripathi  - " />
+    <meta name="twitter:site" content="Blockchain anchored digital Credentials By CertOnce.com" />
+    <meta name="twitter:image" content="<br />
+<b>Warning</b>:  Undefined variable $share_image in <b>/var/www/certificates.galgotiasuniversity.edu.in/verifier.php</b> on line <b>68</b><br />
+" />
+    <meta name="twitter:creator" content="@rajesh" />
+
+
+
+
+    <!--
+    <meta property='og:url' content='https://www.certonce.com/verifier.html?https://certonce.s3.us-east-2.amazonaws.com/signedcertificates/education/116ce5e9-2b12-467e-8a8b-f765737e5e1e.json' />
+    -->
+    <title>Galgotias University Blockchain Verifier</title>
+    <script type="text/javascript" src="https://certificates.galgotiasuniversity.edu.in/conf.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://certificates.galgotiasuniversity.edu.in/main1.js"></script>
+    <script type="text/javascript" src="https://certificates.galgotiasuniversity.edu.in/custom.js"></script>    
+    <link rel="stylesheet" type="text/css"  href="https://certificates.galgotiasuniversity.edu.in/style.css">
+    <link rel="icon" href="<br />
+<b>Warning</b>:  Undefined variable $favicon_image in <b>/var/www/certificates.galgotiasuniversity.edu.in/verifier.php</b> on line <b>83</b><br />
+">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous">
+    <style type="text/css" scoped>
+      @font-face {
+      font-family:"BaroqueScript";
+      src: url("https://www.certonce.com/fonts/BaroqueScript.ttf") format("truetype");}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap" rel="stylesheet">
+
+    <script>
+    
+    var documentId="";  
+    var apiurl = "https://www.certonce.com:5000/api/verifyrequest";
+    function displaySpinner(show)
+    {
+        if(show==true)
+        {
+            $(".lds-spinner").css("display", "block");
+            $(".backDiv").css("display", "block");
+        }
+        else
+        {
+            $(".lds-spinner").css("display", "none");
+            $(".backDiv").css("display", "none");
+        }
+    }
+    function request(evt)
+    {
+      evt.preventDefault();
+      console.log(evt);      
+      console.log(documentId);
+      console.log($("#fullname").val());
+      let fullname = $("#fullname").val();
+      let designation = $("#designation").val();
+      let organization = $("#organization").val();
+      let email = $("#email").val();
+      let contactnumber = $("#contactnumber").val();
+      if (fullname == "" || designation == "" || organization == "" || email == "" || contactnumber == ""){
+        $("#warningdisplay").text("You have to fill all the elements.")
+        $("#warningdisplay").css("display", "block");
+      }
+      else {
+        $("#warningdisplay").css("display", "none");
+        $.ajax({
+          method: "POST",
+          url: apiurl,
+          data: {id: documentId, fullname: fullname, designation: designation, organization: organization, email: email, contactnumber: contactnumber},
+          beforeSend: displaySpinner(true),
+          success: function (result) {
+            console.log(result);
+          if(result.Status == "200"){
+            displaySpinner(false);
+            // $("#successdisplay").text("Your request for an official email has been received! The certificate is instantly generated and shared with you in your email inbox.")
+            // $("#successdisplay").css("color", "green");  
+            $("#modal").modal("hide"); 
+            $("#successmodal").modal("show");
+          }
+          else {
+            displaySpinner(false);
+            $("#warningdisplay").text(result.message);
+            $("#warningdisplay").css("color", "red");   
+            $("#warningdisplay").css("display", "block");
+          }
+          }
+        });  
+      }
+
+    }
+    async function openRequestOfficialEmailModal() {      
+      $('#modal').modal('show');
+    }
+    function handleLoad (e) {
+      console.log(e.type, e.detail);
+      document.getElementById("loadingid").style.display="none";
+      if(e.type=="certificate-verify")
+      {
+        var recordid = window.location.href.split("/")[window.location.href.split("/").length-1];
+        console.log(recordid);
+        $.ajax({
+          method: "POST",
+          //url: "https://certificates.galgotiasuniversity.edu.in:5000/api/verifylog",
+          url: "https://www.certonce.com:5000/api/verifylog",
+          data: {documentid: recordid},
+          success: function (result) {
+              console.log(result);
+          }
+        });
+      }
+    }
+
+    window.addEventListener('certificate-load', handleLoad);
+    window.addEventListener('certificate-verify', handleLoad);
+    window.addEventListener('certificate-share', handleLoad);
+
+    
+    
+    </script>
+    <style type="text/css">
+      .rotate {
+        animation: rotation 3.5s infinite linear;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(359deg);
+        }
+      }
+    </style>  
+  </head>
+  <body>
+        <div id="loadingid" style="background-color:white;position:absolute;top:0;left:0;height:100%;width:100%;z-index:999">
+        <center>
+          <img src="https://certificates.galgotiasuniversity.edu.in/logo.png" class="rotate" width="100px" style="position: absolute;margin: auto;left: 0;right: 0;text-align: center;bottom: 0;top: 0;" />
+        </center>
+      </div>
+        <input type="hidden" id="client" value="<br />
+<b>Warning</b>:  Undefined variable $collegeid in <b>/var/www/certificates.galgotiasuniversity.edu.in/verifier.php</b> on line <b>209</b><br />
+" />
+    <header class="portal-c-header portal-o-boxed"><img id="logoid" class="portal-c-logo" src="<br />
+<b>Warning</b>:  Undefined variable $logo_image in <b>/var/www/certificates.galgotiasuniversity.edu.in/verifier.php</b> on line <b>210</b><br />
+">
+      
+    <nav class="portal-c-nav">
+      <ul class="portal-c-menu content">
+        <li><a href="#verification" id="a0" onclick="openTab(event,'verification')"  class="portal-c-menu__link portal-js-tab-links is-active">Verification</a></li>
+        <li><a href="#signingkeys" id="a1" onclick="openTab(event,'signingkeys')" class="portal-c-menu__link portal-js-tab-links">Signing keys</a></li>
+      </ul>
+    </nav>
+    
+    </header>
+  <div class="vertical-section-container centered">
+      <div class="demo" id="verificationid" style="display: block;">
+        <center><h1 style="font-size: 30px;">Galgotias University Blockchain Verifier</h1></center>
+        <p style="color: rgb(51, 51, 51); text-align: left;">Use this page to verify the certificates that have been registered on the blockchain issued by Galgotias University.</p> <p id="contactid">For questions, please contact us at &nbsp;<a href="#">admin@certonce.com</a></p>
+        <blockcerts-verifier display-mode="fullscreen" src="https://certificates.galgotiasuniversity.edu.in/verify/2024/b718119e-6076-4d60-8158-21ec4d801ccf" id="verifierbodyid" disable-auto-verify></blockcerts-verifier>
+      </div>
+       
+      <div class="demo"  id="signingkeysid" style="display: none;">
+        <h1 class="portal-c-title--keys"  style="font-size:2rem;">Signing Keys</h1>
+        <p style="color: rgb(51, 51, 51); text-align: left; margin-bottom: 50px;">The following keys have been used to digitally sign credentials by Galgotias University.</p>
+        <table class="pkr-c-table"><thead><tr><th class="pkr-c-table-th" id="totalkeyid"></th></tr></thead><tbody id="signingkeyid"><tr><td style="padding: 14px 16px;position: relative;background-color: #fff;border: solid 1px #ccc;border-top-color: rgb(204, 204, 204);border-top-style: solid;border-top-width: 1px;border-top: 0;"><p class="pkr-o-medium-text"></p><p class="pkr-o-medium-text"></p><p class="pkr-o-small-text"></p></td></tr></tbody></table>
+      </div>
+     
+      <!-- <center style="margin-top:20px;">
+          <a href="https://www.mietjmu.in/"><img style="width:100%;" src="https://certification.mietjmu.in/MIET Banner.png" /></a>
+      </center> -->
+       
+  </div>
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="padding-left:0px;">
+      <div class="modal-dialog modal-md  modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0">
+          <div class="modal-body py-0">            
+            <div class="d-flex main-content">
+              <div style="width:100%;" class="content-text p-4">
+                <form action="#" id="requestformid">
+                  <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter full name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="designation">Designation</label>
+                    <input type="text" class="form-control" id="designation" placeholder="Enter designation" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="orgarnization">Organization</label>
+                    <input type="text" class="form-control" id="organization" placeholder="Enter organization" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactnumber">Contact Number</label>
+                    <input type="text" class="form-control" id="contactnumber" placeholder="Contact Number" required>
+                  </div>
+                  
+                  <label id="warningdisplay" style="display: none; color: red;"></label>
+                  <div class="form-group d-flex align-items-center">
+                    <center>
+                      <input type="submit" value="Request" class="btn btn-primary mr-3 px-5" onClick="request(event)">                    
+                    </center>
+                  </div>                  
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="successmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="padding-left:0px;">
+      <div class="modal-dialog modal-md  modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0">
+          <div class="modal-body py-0">            
+            <div class="d-flex main-content">
+              <div style="width:100%;" class="content-text p-4"> 
+                <br />
+                <p style="color: green; font-size: 14pt; text-align: center;">Success!</p>
+                <label id="successdisplay" style="">Your request for an official email has been received! The certificate is instantly generated and shared with you in your email inbox.</label>                  
+                <br />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="lds-spinner" style="display: none;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  	<div class="backDiv" style="display: none;"></div>
+
+  
+  
+</body></html>
